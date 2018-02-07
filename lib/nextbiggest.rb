@@ -2,29 +2,23 @@ require 'pry'
 class NextBiggest
 
   # def digits2(number2)
-  #   arr = number2.split('')
-  #   if arr[0] <= arr[1]
+  #   arrDigits = number2.to_s.split('')
+  #   arrDigits.map! {|x| x.to_i}
+  #   if arrDigits[0] >= arrDigits[1]
   #     -1
-  #   elsif number2 = 12
-  #     21
   #   else
-  #     63
+  #     arrDigits.reverse.join.to_i
   #   end
   # end
 
   def self.convert(input)
-
-    if input.to_s.length == 1
+    stringput = input.to_s
+    # stringified version of the integer input
+    if stringput.length == 1
       -1
-    # elsif input == 12
-    #   21
-    # elsif input == 11
-    #   -1
-    # else
-    #   63
     else
       # digits2(input)
-      arrDigits = input.to_s.split('')
+      arrDigits = stringput.split('')
       # split the digits into an array (they are stored as strings)
       arrDigits.map! {|x| x.to_i}
       # this is remapping over the array and turning the array of strings
