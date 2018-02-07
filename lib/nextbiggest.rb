@@ -23,18 +23,16 @@ class NextBiggest
     # else
     #   63
     else
-
       # digits2(input)
-      arrString = input.to_s.split('')
-      arrString.map! {|x| x.to_i}
-      if arrString[0] <= arrString[1]
+      arrDigits = input.to_s.split('')
+      # split the digits into an array (they are stored as strings)
+      arrDigits.map! {|x| x.to_i}
+      # this is remapping over the array and turning the array of strings
+      if arrDigits[0] >= arrDigits[1]
         -1
-      elsif input == 12
-        21
       else
-        63
+        arrDigits.reverse.join.to_i
       end
-      
     end
   end
 
