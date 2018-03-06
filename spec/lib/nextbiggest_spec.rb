@@ -42,6 +42,7 @@ RSpec.describe NextBiggest do
 
       it 'converts 365 to 536' do
         conversion(365, 536)
+        #failing test
       end
     end
 
@@ -57,6 +58,11 @@ RSpec.describe NextBiggest do
       it 'converts 4938 to 4983' do
         conversion(4938, 4983)
       end
+
+      it 'converts 9786 to 9867' do
+        conversion(9786, 9867)
+        #failing test
+      end
     end
 
     describe 'Big Conversions' do
@@ -66,6 +72,7 @@ RSpec.describe NextBiggest do
 
       it 'converts 21365 to 21536' do
         conversion(21365, 21536)
+        #failing test
       end
     end
   end
