@@ -3,31 +3,51 @@ class NextBiggest
 
   def self.convert(input)
     array = input.to_s.split('').map {|x| x.to_i}
-    n = array.length
+    digits = array.length
 
-    if n == 1
-      -1
-    elsif n == 2
+    if digits == 1
+      if array[-1] < array[0]
+        swapping(array, digits-2)
+      else
+        -1
+      end
+
+    elsif digits == 2
       if array[0] < array[1]
-        swapping(array, n-2)
+        swapping(array, digits-2)
       else
         -1
       end
-    elsif n == 3
+
+    elsif digits == 3
       if array[1] < array[2]
-        swapping(array, n-2)
+        swapping(array, digits-2)
       elsif array[0] < array[1]
-        swapping(array, n-3)
+        swapping(array, digits-3)
       else
         -1
       end
-    else #elsif n == 4
+
+    elsif digits == 4
       if array[2] < array[3]
-        swapping(array, n-2)
+        swapping(array, digits-2)
       elsif  array[1] < array[2]
-        swapping(array, n-3)
+        swapping(array, digits-3)
       elsif array[0] < array[1]
-        swapping(array, n-4)
+        swapping(array, digits-4)
+      else
+        -1
+      end
+
+    elsif digits == 5
+      if array[3] < array[4]
+        swapping(array, digits-2)
+      elsif  array[2] < array[3]
+        swapping(array, digits-3)
+      elsif array[1] < array[2]
+        swapping(array, digits-4)
+      elsif array[0] < array[1]
+        swapping(array, digits-5)
       else
         -1
       end

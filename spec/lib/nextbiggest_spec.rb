@@ -39,6 +39,10 @@ RSpec.describe NextBiggest do
       it 'converts 736 to 763' do
         conversion(736, 763)
       end
+
+      it 'converts 365 to 536' do
+        conversion(365, 536)
+      end
     end
 
     describe 'Quadruple Digit Conversions' do
@@ -52,6 +56,16 @@ RSpec.describe NextBiggest do
 
       it 'converts 4938 to 4983' do
         conversion(4938, 4983)
+      end
+    end
+
+    describe 'Big Conversions' do
+      it 'converts 12345 to 12354' do
+        conversion(12345, 12354)
+      end
+
+      it 'converts 21365 to 21536' do
+        conversion(21365, 21536)
       end
     end
   end
